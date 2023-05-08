@@ -1,3 +1,5 @@
+package leetcode
+
 fun isValid(s: String): Boolean {
     val stack = mutableListOf<Char>()
 

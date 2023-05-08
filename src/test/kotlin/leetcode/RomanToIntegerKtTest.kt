@@ -1,3 +1,6 @@
+package leetcode
+
+import leetcode.romanToInt
 import org.junit.jupiter.api.Assertions.*
 
 class RomanToIntegerKtTest {

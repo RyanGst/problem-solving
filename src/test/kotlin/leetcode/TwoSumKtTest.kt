@@ -1,3 +1,6 @@
+package leetcode
+
+import leetcode.twoSum
 import org.junit.jupiter.api.Assertions.*
 
 class TwoSumKtTest {

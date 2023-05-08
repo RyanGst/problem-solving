@@ -1,3 +1,5 @@
+package leetcode
+
 fun longestCommonPrefix(strs: Array<String>): String {
     if (strs.isEmpty()) return ""
 
