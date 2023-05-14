@@ -8,7 +8,7 @@ final class UselessClass {
 
 class Test {
     public static void main(String[] args) {
-        UselessClass uselessClass = new UselessClass();
+        //UselessClass uselessClass = new UselessClass();
     }
 }
 

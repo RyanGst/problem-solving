@@ -13,43 +13,25 @@ class ListNode(var `val`: Int) {
 
 fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
 
-    if (list1 == null) return list2
-    if (list2 == null) return list1
+    fun mergeLists(list1: ListNode?, list2: ListNode?): ListNode? {
+        return if (list1?.`val`!! < list2?.`val`!!) {
+            list1.next = mergeTwoLists(list1.next, list2)
 
-    var l1 = list1
-    var l2 = list2
-    var result: ListNode? = null
-    var current: ListNode? = null
-
-    while (l1 != null && l2 != null) {
-        if (l1.`val` < l2.`val`) {
-            if (result == null) {
-                result = l1
-                current = result
-            } else {
-                current?.next = l1
-                current = current?.next
-            }
-            l1 = l1.next
+            list1
         } else {
-            if (result == null) {
-                result = l2
-                current = result
-            } else {
-                current?.next = l2
-                current = current?.next
-            }
-            l2 = l2.next
+            list2.next = mergeTwoLists(list1, list2.next)
+
+            list2
         }
     }
 
-    if (l1 != null) {
-        current?.next = l1
+    return when {
+        list1 == null -> list2
+        list2 == null -> list1
+        else -> {
+            mergeLists(list1, list2)
+        }
     }
 
-    if (l2 != null) {
-        current?.next = l2
-    }
-
-    return result
 }
+
