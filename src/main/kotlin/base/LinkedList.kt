@@ -8,12 +8,17 @@ fun main() {
     head.next!!.next = ListNode(15)
     printNodes(head)
 
-
     //println(searchNode(head, 11))
     recursiveSearchNode(head, 11)?.next?.let { println(it.`val`) }
     appendNode(head, 20)
     //printNodes(head)
 }
+
+fun printNodes(list: ListNode) {
+    println(list.`val`)
+    list.next?.let { printNodes(it) }
+}
+
 fun recursiveSearchNode(list: ListNode, x: Int): ListNode? {
     return when {
         list.`val` == x -> list
@@ -21,30 +26,24 @@ fun recursiveSearchNode(list: ListNode, x: Int): ListNode? {
         else -> recursiveSearchNode(list.next!!, x)
     }
 }
-fun printNodes(list: ListNode) {
-    println(list.`val`)
-    list.next?.let { printNodes(it) }
-}
-
-fun searchNode(list: ListNode, x: Int): ListNode? {
-    if(list.`val` == x) return list
-    return list.next?.let { searchNode(it, x) }
-}
 
 fun appendNode(list: ListNode, x: Int): ListNode {
-    if(list.next == null) {
-        list.next = ListNode(x)
-    } else {
-        appendNode(list.next!!, x)
+    return when (list.next) {
+        null -> {
+            list.next = ListNode(x)
+            list
+        }
+
+        else -> appendNode(list.next!!, x)
     }
-    return list
 }
 
 fun removeListNodes(list: ListNode, x: Int): ListNode {
-    if(list.`val` == x) {
-        return list.next!!
-    } else {
-        list.next = removeListNodes(list.next!!, x)
+    return when (list.`val`) {
+        x -> list.next!!
+        else -> {
+            list.next = removeListNodes(list.next!!, x)
+            list
+        }
     }
-    return list
 }
