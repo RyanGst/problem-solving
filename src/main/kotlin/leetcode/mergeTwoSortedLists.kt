@@ -1,5 +1,7 @@
 package leetcode
 
+import definitions.ListNode
+
 /**
  * Example:
  * var li = ListNode(5)
@@ -7,9 +9,7 @@ package leetcode
  * Definition for singly-linked list.
  */
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}
+
 
 fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
 
