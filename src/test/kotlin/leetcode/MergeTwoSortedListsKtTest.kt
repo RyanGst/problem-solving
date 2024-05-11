@@ -1,5 +1,6 @@
 package leetcode
 
+import definitions.ListNode
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
