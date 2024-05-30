@@ -11,5 +11,6 @@ class SingleNumKtTest {
         val duplicate = singleNumber(intArrayOf(1, 2, 2))
 
         assertEquals(duplicate, 1)
+
     }
 }
