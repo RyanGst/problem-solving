@@ -1,6 +1,5 @@
 package leetcode
 
-import leetcode.longestCommonPrefix
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
